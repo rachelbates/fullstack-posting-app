@@ -1,11 +1,27 @@
 import React from 'react'
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import useStyles from './styles';
+
+
 const Form = () => {
     const classes = useStyles();
+
+    const handleSubmit = () => {
+
+    }
     return (
-        <div>
-            <h1>FORM</h1>
-        </div>
+        <Paper className={classes.paper}>
+            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+                <Typography variant="h6">Creating a Memory</Typography>
+                <TextField 
+                    name="creator" 
+                    variant="outlined" 
+                    label="Creator" 
+                    fullWidth 
+                    value={postData.creator} 
+                    onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
+            </form>
+        </Paper>
     )
 }
 
